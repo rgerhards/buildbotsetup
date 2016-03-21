@@ -39,6 +39,8 @@ sudo mkdir $BUILDBOT_DIR
 cd $BUILDBOT_DIR
 sudo buildslave create-slave slave $BUILDBOT_SERVER $BUILDBOT_NAME $BUILDBOT_PWD
 
+# note: the following script is NOT needed for systemd deployments!
+# but we still generate it as convenience for operators
 echo "#!/bin/bash
 cd $BUILDBOT_DIR
 sudo -u buildbot buildslave \$1 slave" > /tmp/runslave.sh
@@ -57,11 +59,15 @@ Description=Buildbot Slave
 After=network.target
 
 [Service]
-ExecStart=$BUILDBOT_DIR/runslave.sh start
-ExecStop=$BUILDBOT_DIR/runslave.sh stop
+WorkingDirectory=$BUILDBOT_DIR
+User=buildbot
+PIDFile=$BUILDBOT_DIR/twistd.pid
+ExecStart=/usr/bin/bash -c "buildslave start slave"
+ExecStop=/usr/bin/bash -c "buildslave stop slave"
 Type=forking
 
 [Install]
 WantedBy=multi-user.target" > /tmp/buildslave.service
-sudo cp /tmp/buildslave.service /etc/systemd/system
-./projects_setup.sh
+sudo mv /tmp/buildslave.service /etc/systemd/system
+sudo systemctl enable buildslave.service
+#./projects_setup.sh
