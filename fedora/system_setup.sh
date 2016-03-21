@@ -56,7 +56,7 @@ cd $CURR_DIR
 
 echo "[Unit]
 Description=Buildbot Slave
-After=network.target
+After=network-online.target
 
 [Service]
 WorkingDirectory=$BUILDBOT_DIR
@@ -67,6 +67,7 @@ ExecStop=/usr/bin/bash -c \"buildslave stop slave\"
 Type=forking
 
 [Install]
+Wants=network-online.target
 WantedBy=multi-user.target" > /tmp/buildslave.service
 sudo mv /tmp/buildslave.service /etc/systemd/system
 sudo systemctl enable buildslave.service
