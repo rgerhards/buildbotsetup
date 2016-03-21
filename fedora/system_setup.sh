@@ -61,7 +61,7 @@ After=network.target
 [Service]
 WorkingDirectory=$BUILDBOT_DIR
 User=buildbot
-PIDFile=$BUILDBOT_DIR/twistd.pid
+PIDFile=$BUILDBOT_DIR/slave/twistd.pid
 ExecStart=/usr/bin/bash -c \"buildslave start slave\"
 ExecStop=/usr/bin/bash -c \"buildslave stop slave\"
 Type=forking
