@@ -1,0 +1,4 @@
+# this needs to be sourced
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export BUILDBOT_DIR="/var/lib/buildbot"
+export BUILDBOT_SERVER="build.rsyslog.com:9989"
