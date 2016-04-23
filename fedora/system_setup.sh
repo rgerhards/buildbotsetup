@@ -66,6 +66,7 @@ PIDFile=$BUILDBOT_DIR/slave/twistd.pid
 ExecStart=/usr/bin/bash -c \"buildslave start slave\"
 ExecStop=/usr/bin/bash -c \"buildslave stop slave\"
 Type=forking
+Restart=always
 
 [Install]
 Wants=network-online.target
