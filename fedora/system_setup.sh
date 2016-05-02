@@ -51,6 +51,8 @@ chmod +x runslave.sh
 echo "Andre Lorbach <alorbach@adiscon.com>" >/tmp/admin
 sudo mv /tmp/admin /var/lib/buildbot/slave/info
 
+# systemd steals our core dumps, so let us correct this...
+sudo bash -c "echo \"core\" > /proc/sys/kernel/core_pattern"
 
 sudo chown -R buildbot $BUILDBOT_DIR
 
