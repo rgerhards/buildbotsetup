@@ -19,6 +19,9 @@ source envvars
 
 sudo zypper --non-interactive install git valgrind libtool autoconf automake flex bison python-docutils python-sphinx libuuid-devel libgcrypt-devel zlib-devel libopenssl-devel libcurl-devel libgnutls-devel libmysqlclient-devel postgresql-devel net-snmp-devel systemd-devel hiredis-devel libfaketime \
 	gdb \
+	python-devel \
+	qpid-proton \
+	qpid-proton-devel \
 	libdbi-devel \
 	libdbi-drivers-dbd-mysql \
 	autoconf-archive
@@ -28,7 +31,8 @@ sudo zypper --non-interactive -y install gvim
 
 echo installing buildbot slave
 sudo userdel buildbot &> /dev/null
-sudo adduser --shell /bin/false  buildbot
+#sudo adduser --shell /bin/false  buildbot
+sudo useradd --shell /bin/false  buildbot
 # see http://unix.stackexchange.com/questions/56765/creating-an-user-without-a-password
 rm -rf /tmp/buildbot-slave
 mkdir /tmp/buildbot-slave
@@ -68,8 +72,8 @@ After=network-online.target
 WorkingDirectory=$BUILDBOT_DIR
 User=buildbot
 PIDFile=$BUILDBOT_DIR/slave/twistd.pid
-ExecStart=/usr/bin/bash -c \"buildslave start slave\"
-ExecStop=/usr/bin/bash -c \"buildslave stop slave\"
+ExecStart=/bin/bash -c \"buildslave start slave\"
+ExecStop=/bin/bash -c \"buildslave stop slave\"
 Type=forking
 Restart=always
 
