@@ -24,7 +24,8 @@ sudo zypper --non-interactive install git valgrind libtool autoconf automake fle
 	qpid-proton-devel \
 	libdbi-devel \
 	libdbi-drivers-dbd-mysql \
-	autoconf-archive
+	autoconf-archive \
+	pcre-devel
 
 # some extras
 sudo zypper --non-interactive -y install gvim
