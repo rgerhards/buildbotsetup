@@ -1,4 +1,4 @@
-sudo apt-get install -q -y \
+sudo apt install -q -y \
      mysql-server \
      pkg-config \
      libtool \
@@ -35,3 +35,10 @@ sudo apt-get install -q -y \
      libgrok1 libgrok-dev \
      faketime libdbd-mysql libmongo-client-dev autoconf-archive
 # openjdk-7-jdk
+
+# clang 5.0 - update when newer available!
+sudo echo "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-5.0 main" > /etc/apt/sources.list.d/llvm.list
+wget -O - http://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+sudo apt update
+sudo apt install -q -y clang-5.0 lldb-5.0 lld-5.0
+
