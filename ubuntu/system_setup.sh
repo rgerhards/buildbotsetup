@@ -21,39 +21,7 @@ source envvars
 
 sudo add-apt-repository ppa:qpid/released -y
 sudo apt-get update -q -y
-sudo apt-get install -q -y  \
-     mysql-server \
-     pkg-config \
-     libtool \
-     autoconf \
-     autoconf-archive \
-     autotools-dev \
-     automake \
-     libtool \
-     gdb \
-     valgrind \
-     libdbi-dev \
-     libzcmq-dev \
-     libsnmp-dev \
-     libmysqlclient-dev \
-     postgresql-client postgresql-server-dev-9.5 \
-     libglib2.0-dev \
-     libtokyocabinet-dev \
-     zlib1g-dev \
-     uuid-dev \
-     libgcrypt11-dev \
-     bison \
-     flex \
-     libcurl4-gnutls-dev \
-     python-docutils  \
-     wget \
-     libgnutls-dev \
-     libsystemd-dev \
-     libhiredis-dev \
-     librdkafka-dev  \
-     libgrok1 libgrok-dev \
-     faketime libdbd-mysql libmongo-client-dev autoconf-archive
-# openjdk-7-jdk
+source software_install.sh
 
 
 
