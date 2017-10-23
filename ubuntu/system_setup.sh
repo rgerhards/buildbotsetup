@@ -28,9 +28,12 @@ sudo apt-get install -q -y  \
      autoconf \
      autoconf-archive \
      autotools-dev \
+     automake \
+     libtool \
      gdb \
      valgrind \
      libdbi-dev \
+     libzcmq-dev \
      libsnmp-dev \
      libmysqlclient-dev \
      postgresql-client postgresql-server-dev-9.5 \

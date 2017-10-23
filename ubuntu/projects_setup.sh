@@ -13,23 +13,24 @@ git pull
 autoreconf -fvi && ./configure && make || exit $?
 sudo make install || exit $?
 
-cd ~/proj
-if [ ! -e libgt ]; then
-	git clone https://github.com/rsyslog/libgt.git
-fi
-cd libgt
-git pull
-autoreconf -fvi && ./configure && make || exit $?
-sudo make install || exit $?
-
-cd ~/proj
-if [ ! -e libksi ]; then
-	git clone https://github.com/rsyslog/libksi
-fi
-cd libksi
-git pull
-autoreconf -fvi && ./configure && make || exit $?
-sudo make install || exit $?
+# Adiscon-Guardtime components are no longer needed
+#cd ~/proj
+#if [ ! -e libgt ]; then
+	#git clone https://github.com/rsyslog/libgt.git
+#fi
+#cd libgt
+#git pull
+#autoreconf -fvi && ./configure && make || exit $?
+#sudo make install || exit $?
+#
+#cd ~/proj
+#if [ ! -e libksi ]; then
+	#git clone https://github.com/rsyslog/libksi
+#fi
+#cd libksi
+#git pull
+#autoreconf -fvi && ./configure && make || exit $?
+#sudo make install || exit $?
 
 cd ~/proj
 if [ ! -e libfastjson ]; then
