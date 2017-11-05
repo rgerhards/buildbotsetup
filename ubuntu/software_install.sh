@@ -35,6 +35,7 @@ sudo apt install -q -y \
      libnet1-dev \
      libgrok1 libgrok-dev \
      libmongoc-dev \
+     libbson-dev \
      faketime libdbd-mysql autoconf-archive
 # no longer required     libmongo-client-dev 
 # openjdk-7-jdk
