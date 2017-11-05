@@ -32,6 +32,7 @@ sudo apt install -q -y \
      libsystemd-dev \
      libhiredis-dev \
      librdkafka-dev  \
+     libnet1-dev \
      libgrok1 libgrok-dev \
      faketime libdbd-mysql libmongo-client-dev autoconf-archive
 # openjdk-7-jdk
