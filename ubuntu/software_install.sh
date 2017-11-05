@@ -34,7 +34,9 @@ sudo apt install -q -y \
      librdkafka-dev  \
      libnet1-dev \
      libgrok1 libgrok-dev \
-     faketime libdbd-mysql libmongo-client-dev autoconf-archive
+     libmongoc-dev \
+     faketime libdbd-mysql autoconf-archive
+# no longer required     libmongo-client-dev 
 # openjdk-7-jdk
 
 # clang 5.0 - update when newer available!
