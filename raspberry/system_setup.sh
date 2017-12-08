@@ -24,7 +24,10 @@ sudo apt-get update -q -y
 source software_install.sh
 
 
-
+# get newest autoconf-archive (newest we have ;-))
+wget --no-verbose http://build.rsyslog.com/CI/autoconf-archive_20170928-1adiscon1_all.deb
+sudo dpkg -i autoconf-archive_20170928-1adiscon1_all.deb
+rm autoconf-archive_20170928-1adiscon1_all.deb
 
 # some extras
 #sudo apt-get install -y install gvim # not useful here!
