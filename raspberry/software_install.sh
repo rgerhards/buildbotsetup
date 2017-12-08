@@ -31,13 +31,13 @@ sudo apt install -q -y \
      librdkafka-dev  \
      libnet1-dev \
      libgrok1 libgrok-dev \
+     libgnutls28-dev \
      faketime libdbd-mysql autoconf-archive
 #     libczmq-dev \
 # postgresql-server-dev-9.5 \
 #     clang-4.0 \
 #     libmongoc-dev \
 #     libbson-dev \
-#     libgnutls-dev \
 # no longer required     libmongo-client-dev 
 # openjdk-7-jdk
 

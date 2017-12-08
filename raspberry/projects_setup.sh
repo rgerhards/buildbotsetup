@@ -79,7 +79,7 @@ if [ ! -e librelp ]; then
 fi
 cd librelp
 git pull
-autoreconf -fvi && ./configure --enable-tls=no && make -j2 || exit $?
+autoreconf -fvi && ./configure --enable-tls && make -j2 || exit $?
 sudo make install || exit $?
 
 cd ~/proj

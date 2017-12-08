@@ -27,8 +27,9 @@ source software_install.sh
 
 
 # some extras
-#sudo apt-get install -y install gvim #Ã not useful here!
+#sudo apt-get install -y install gvim # not useful here!
 sudo apt-get install -y python-cxx-dev
+sudo pip install Twisted==16.0.0
 
 echo installing buildbot slave
 sudo userdel buildbot &> /dev/null
