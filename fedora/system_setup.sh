@@ -23,6 +23,8 @@ sudo bash -c "echo core > /proc/sys/kernel/core_pattern"
 sudo dnf -y install clang clang-analyzer git valgrind libtool autoconf automake flex bison python-docutils python-sphinx json-c-devel libuuid-devel libgcrypt-devel zlib-devel openssl-devel libcurl-devel gnutls-devel mysql-devel postgresql-devel libdbi-dbd-mysql libdbi-devel net-snmp-devel systemd-devel libmongo-client-devel hiredis-devel qpid-proton-c-devel redhat-rpm-config python-devel elasticsearch libfaketime \
 	gdb \
 	nc \
+	cyrus-sasl-devel \
+	cyrus-sasl-lib \
 	autoconf-archive
 
 # some extras
