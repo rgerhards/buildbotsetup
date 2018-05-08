@@ -23,7 +23,7 @@ if [ ! -e libestr ]; then
 fi
 cd libestr
 git pull
-autoreconf -fvi && ./configure && make  make -j2 || exit $?
+autoreconf -fvi && ./configure && make -j2 || exit $?
 sudo make install || exit $?
 
 # Adiscon-Guardtime components are no longer needed
@@ -33,7 +33,7 @@ sudo make install || exit $?
 #fi
 #cd libgt
 #git pull
-#autoreconf -fvi && ./configure && make  make -j2 || exit $?
+#autoreconf -fvi && ./configure && make -j2 || exit $?
 #sudo make install || exit $?
 #
 #cd ~/proj
@@ -42,7 +42,7 @@ sudo make install || exit $?
 #fi
 #cd libksi
 #git pull
-#autoreconf -fvi && ./configure && make  make -j2 || exit $?
+#autoreconf -fvi && ./configure && make -j2 || exit $?
 #sudo make install || exit $?
 
 cd ~/proj
@@ -51,7 +51,7 @@ if [ ! -e libfastjson ]; then
 fi
 cd libfastjson
 git pull
-autoreconf -fvi && ./configure && make  make -j2 || exit $?
+autoreconf -fvi && ./configure && make -j2 || exit $?
 sudo make install || exit $?
 
 
@@ -61,7 +61,7 @@ if [ ! -e liblogging ]; then
 fi
 cd liblogging
 git pull
-autoreconf -fvi && ./configure --disable-journal && make  make -j2 || exit $?
+autoreconf -fvi && ./configure --disable-journal && make -j2 || exit $?
 sudo make install || exit $?
 
 cd ~/proj
@@ -70,7 +70,7 @@ if [ ! -e liblognorm ]; then
 fi
 cd liblognorm
 git pull
-autoreconf -fvi && ./configure --enable-compile-warnings=yes && make  make -j2 || exit $?
+autoreconf -fvi && ./configure --enable-compile-warnings=yes && make -j2 || exit $?
 sudo make install || exit $?
 
 cd ~/proj
@@ -79,7 +79,7 @@ if [ ! -e librelp ]; then
 fi
 cd librelp
 git pull
-autoreconf -fvi && ./configure && make  make -j2 || exit $?
+autoreconf -fvi && ./configure && make -j2 || exit $?
 sudo make install || exit $?
 
 cd ~/proj
@@ -106,4 +106,4 @@ fi
 echo "./configure -enable-testbench --enable-imdiag --enable-imfile --enable-impstats --enable-imptcp --enable-mmanon --enable-mmaudit --enable-mmfields --enable-mmjsonparse --enable-mmpstrucdata --enable-mmsequence --enable-mmutf8fix --enable-mail --enable-omprog --enable-omruleset --enable-omstdout --enable-omuxsock --enable-pmaixforwardedfrom --enable-pmciscoios --enable-pmcisconames --enable-pmlastmsg --enable-pmsnare --enable-libgcrypt --enable-mmnormalize --disable-omudpspoof --enable-relp --disable-snmp --disable-mmsnmptrapd --enable-gnutls --enable-mysql --enable-mysql-tests --enable-usertools=no --enable-gt-ksi --enable-libdbi --enable-pgsql --enable-omhttpfs --enable-elasticsearch --enable-valgrind --enable-ommongodb --enable-omamqp1=no --enable-imjournal --enable-omjournal --enable-compile-warnings=yes" > utils/conf
 chmod +x utils/conf
 
-autoreconf -fvi && utils/conf && make  make -j2 || exit $?
+autoreconf -fvi && utils/conf && make -j2 || exit $?
