@@ -7,12 +7,37 @@ export LD_LIBRARY_PATH=/usr/local/lib
 export CI_HOME=`pwd`
 echo CI_HOME: $CI_HOME
 mkdir $CI_HOME/proj
+
+
+
+printf "\n\n================== librdkafka =======================\n\n"
+# we need the latest librdkafka as there as always required updates
+cd $CI_HOME/proj
+	git clone https://github.com/edenhill/librdkafka
+	cd librdkafka
+	(unset CFLAGS; ./configure --prefix=/usr/local --CFLAGS="-g" ; make -j)
+	sudo make install
+ 
+
+printf "\n\n================== libksi =======================\n\n"
+# we need Guardtime libksi here, otherwise we cannot check the KSI component	
+cd $CI_HOME/proj
+	git clone https://github.com/guardtime/libksi.git
+	cd libksi
+	autoreconf -fvi
+	./configure --prefix=/usr/local 
+	make -j3
+	sudo make install
+
+
+printf "\n\n================== libestr  =======================\n\n"
 cd $CI_HOME/proj
 git clone https://github.com/rsyslog/libestr.git
 cd libestr
 git pull
 autoreconf -fvi && ./configure --prefix=/usr/local && make -j2 || exit $?
 $SUDO make -j2 install || exit $?
+
 
 printf "\n\n================== libfastjson =======================\n\n"
 cd $CI_HOME/proj
