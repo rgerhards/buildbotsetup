@@ -1,0 +1,1 @@
+yum install -y automake autoconf bash gettext gettext-devel libtool m4 make pkg-config zlib zlib-devel git gnutls gnutls-devel info flex nettle nettle-devel p11-kit-devel libffi libffi-devel gmp gmp-devel
