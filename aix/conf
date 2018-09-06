@@ -1,0 +1,10 @@
+./configure \
+	--disable-dependency-tracking \
+	--disable-uuid \
+	--disable-libgcrypt  \
+	--disable-fmhttp \
+	--enable-testbench \
+	--enable-imdiag \
+	--enable-omstdout \
+	--enable-mmanon \
+	--enable-imfile
